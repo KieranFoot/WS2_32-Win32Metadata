@@ -11,6 +11,7 @@
         <tags>Win32 Metadata WS2_32</tags>
         <license type="expression">MIT</license>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <readme>docs\README.md</readme>
         <repository type="git" url="https://github.com/KieranFoot/WS2_32-Win32Metadata" />
         <dependencies>
             <dependency id="Microsoft.Windows.SDK.Win32Metadata" version="63.0.31-preview" />
@@ -19,6 +20,8 @@
 
     <files>
         <file src="$OutputWinmd$" target=""/>
+
+        <file src="..\README.md" target="docs\" />
 
         <file src="WS2_32.Win32Metadata.props" target="build/WS2_32.Win32Metadata.props" />
         <file src="WS2_32.Win32Metadata.props" target="buildTransitive/WS2_32.Win32Metadata.props" />
