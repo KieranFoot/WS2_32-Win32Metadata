@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<package>
+    <metadata>
+        <id>WS2_32.Win32Metadata</id>
+        <version>1.0.0</version>
+        <authors>Kieran Foot</authors>
+        <title>Detours Library Win32 Metadata</title>
+        <summary>This packages provides the Win32 API surface of the WS2_32 (Winsock2) library as a winmd (Windows metadata) file.</summary>
+        <description>This packages provides the Win32 API surface of the WS2_32 (Winsock2) library as a winmd (Windows metadata) file. It is intended to be used as the basis for generating language-specific projections. It is not loadable as a CLR assembly.</description>
+        <projectUrl>https://github.com/KieranFoot/WS2_32-Win32Metadata</projectUrl>
+        <tags>Win32 Metadata WS2_32</tags>
+        <license type="expression">MIT</license>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <repository type="git" url="https://github.com/KieranFoot/WS2_32-Win32Metadata" />
+        <dependencies>
+            <dependency id="Microsoft.Windows.SDK.Win32Metadata" version="63.0.31-preview" />
+        </dependencies>
+    </metadata>
+
+    <files>
+        <file src="$OutputWinmd$" target=""/>
+
+        <file src="WS2_32.Win32Metadata.props" target="build/WS2_32.Win32Metadata.props" />
+        <file src="WS2_32.Win32Metadata.props" target="buildTransitive/WS2_32.Win32Metadata.props" />
+    </files>
+</package>

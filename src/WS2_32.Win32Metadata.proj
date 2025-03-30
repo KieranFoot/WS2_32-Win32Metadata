@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.Windows.WinmdGenerator/0.63.31-preview">
+
+    <PropertyGroup>
+        <OutputWinmd>winmd/WS2_32.winmd</OutputWinmd>
+        <WinmdVersion>4.0.1</WinmdVersion>
+        <GenerateAssemblyVersionInfo>false</GenerateAssemblyVersionInfo>
+        <NuspecFile>WS2_32.Win32Metadata.nuspec</NuspecFile>
+        <NuspecBasePath>.</NuspecBasePath>
+        <NoWarn>$(NoWarn);NU5100;NU5104</NoWarn>
+        <ShowEmitWinmdOutputDetails>true</ShowEmitWinmdOutputDetails>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+	<ItemGroup>
+		<Headers Include="ws2_32.h" />
+		
+		<Partition Include="main.cpp">
+			<TraverseFiles>@(Headers)</TraverseFiles>
+			<Namespace>Microsoft.WS2_32</Namespace>
+			<ExcludeFromCrossarch>true</ExcludeFromCrossarch>
+		</Partition>
+		
+	</ItemGroup>
+
+    <Target Name="SetNuSpecProperties" BeforeTargets="GenerateNuspec">
+        <PropertyGroup>
+            <NuspecProperties>$(NuspecProperties);OutputWinmd=$(OutputWinmd)</NuspecProperties>
+        </PropertyGroup>
+    </Target>
+    
+</Project>
