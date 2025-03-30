@@ -26,6 +26,11 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         global-json-file: global.json
+        
+    - name: Setup Windows SDK
+      uses: GuillaumeFalourd/setup-windows10-sdk-action@v2.4
+      with:
+        sdk-version: 26100
 
     - name: Restore dependencies
       run: dotnet restore
