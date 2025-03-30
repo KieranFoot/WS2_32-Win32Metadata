@@ -32,7 +32,7 @@ jobs:
     - name: Build
       run: dotnet build -c Release --no-restore -p:GeneratePackageOnBuild=true
 
-    - run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k "$env:NUGET_KEY" Detours.Win32Metadata.*.nupkg
+    - run: dotnet nuget push -s https://api.nuget.org/v3/index.json -k "$env:NUGET_KEY" WS2_32.Win32Metadata.*.nupkg
       shell: pwsh
       env:
         NUGET_KEY: ${{ secrets.NUGET_KEY }}
